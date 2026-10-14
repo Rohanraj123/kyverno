@@ -510,7 +510,7 @@ func Test_URLPathCanonicalization(t *testing.T) {
 		}
 	}
 
-	t.Run("query-string namespace spoofing is rejected", func(t *testing.T) {
+	t.Run("query-string namespace decoy is ignored, path namespace decides", func(t *testing.T) {
 		// The query string carries a traversal attempt targeting kube-system,
 		// but query strings are never used by the API server for routing -
 		// the actual resource stays within the declared namespace, so this
