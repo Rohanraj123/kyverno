@@ -6,9 +6,8 @@ import (
 	"strings"
 )
 
-// Kept at parity with release-1.14-n4k through release-1.18-n4k. Entries are
-// matched against every resolved address at dial time, so a range closes the
-// whole class rather than the one address an advisory happened to name.
+// Entries are matched against every resolved address at dial time, so a range
+// closes the whole class rather than a single named address.
 var defaultPolicyHTTPBlocklist = []string{
 	"169.254.0.0/16",           // IPv4 link-local: AWS, GCP and Azure IMDS, plus AWS ECS task metadata on 169.254.170.2
 	"fe80::/10",                // IPv6 link-local
